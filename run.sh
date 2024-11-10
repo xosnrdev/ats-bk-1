@@ -1,3 +1,9 @@
 #!/bin/bash
 
-fastapi dev src/main.py
+case "$1" in
+    dev) fastapi dev ;;
+    test) pytest ;;
+    fmt) ruff format ;;
+    check) ruff check ;;
+    *) fastapi run ;;
+esac
